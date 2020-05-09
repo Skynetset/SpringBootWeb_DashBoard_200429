@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * Description:
  * 扩展SpringMVC，保留自动配置，并可以新增自定义配置
  * -@EnableWebMvc 全面接管SpringMVC
  *
@@ -22,11 +21,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
     /**
-     * @Description : TODO 字段排除
-     * @Author : 1260535819@qq.com
+     * 字段排除
+     * @author : 1260535819@qq.com
      * @Date : 29/4/2020 下午5:30
      */
-    public static String[] excludes={"/","/index.html","/user/login","/asserts/**","/static/**","/webjars/**"};
+    protected static String[] excludes={"/","/index.html","/user/login","/asserts/**","/static/**","/webjars/**","/druid/**"};
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -34,10 +33,10 @@ public class MyMvcConfig implements WebMvcConfigurer {
     }
 
     /**
-     * @Description : TODO 首页配置
+     * 首页配置
      *      -@Bean将组件加入容器中
      *      自定义视图解析器
-     * @Author : 1260535819@qq.com
+     * @author : 1260535819@qq.com
      * @Date : 28/4/2020 下午5:11
      * @return : org.springframework.web.servlet.config.annotation.WebMvcConfigurer
      */
@@ -61,8 +60,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         };
     }
     /**
-     * @Description : TODO 注入自定义国际化配置
-     * @Author : 1260535819@qq.com
+     * 注入自定义国际化配置
+     * @author : 1260535819@qq.com
      * @Date : 29/4/2020 下午3:17
      * @return : org.springframework.web.servlet.LocaleResolver
      */

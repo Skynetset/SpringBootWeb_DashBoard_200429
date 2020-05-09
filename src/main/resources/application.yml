@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    include:
+#      引入其他配置
+      - druid
+      - datasource
+      - mybatis
+      - jpa

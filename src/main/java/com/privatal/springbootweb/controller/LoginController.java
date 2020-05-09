@@ -1,7 +1,9 @@
 package com.privatal.springbootweb.controller;
 
+import com.privatal.springbootweb.exception.UserExistsException;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,5 +30,10 @@ public class LoginController {
             context.put("MSG","用户名密码错误");
             return "login";
         }
+    }
+    @GetMapping("/useraa")
+    public String login() throws UserExistsException {
+
+        throw new UserExistsException();
     }
 }

@@ -18,6 +18,13 @@ import java.util.Locale;
  */
 public class MyLocalResolver implements LocaleResolver {
     Logger log = LoggerFactory.getLogger(getClass());
+    /**
+     * TODO 
+     * @author : 1260535819@qq.com
+     * @date : 9/5/2020 上午9:09
+ * @param httpServletRequest :
+     * @return : java.util.Locale
+     */
     @Override
     public Locale resolveLocale(HttpServletRequest httpServletRequest) {
         String language = httpServletRequest.getParameter("l");
@@ -30,7 +37,6 @@ public class MyLocalResolver implements LocaleResolver {
         Object localeSession = httpServletRequest.getSession().getAttribute("locale");
         if (localeSession != null)
             locale= (Locale) localeSession;
-        log.debug("locale"+locale);
         return locale;
     }
 
